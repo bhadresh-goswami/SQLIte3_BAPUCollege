@@ -10,9 +10,22 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var dbObj:dbManager?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        dbObj = dbManager()
+        
+//        if(dbObj?.RunCommand(cmdText: "insert into tblUser(username,emailid,password) values('a','a','a')"))!
+//        {
+//            print("Data Inserted!")
+//        }
+//        else{
+//            print("Data Not Able to Inserted!")
+//        }
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

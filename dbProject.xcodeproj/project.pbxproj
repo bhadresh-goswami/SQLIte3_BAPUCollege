@@ -15,6 +15,10 @@
 		D741703C23473A27005AF640 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D741703A23473A27005AF640 /* LaunchScreen.storyboard */; };
 		D741704723473A27005AF640 /* dbProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D741704623473A27005AF640 /* dbProjectTests.swift */; };
 		D741705223473A27005AF640 /* dbProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D741705123473A27005AF640 /* dbProjectUITests.swift */; };
+		D741706123473A5C005AF640 /* dbUserInfo.db in Resources */ = {isa = PBXBuildFile; fileRef = D741706023473A5C005AF640 /* dbUserInfo.db */; };
+		D741706423473B7A005AF640 /* dbManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D741706323473B7A005AF640 /* dbManager.swift */; };
+		D741706723473D59005AF640 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D741706623473D59005AF640 /* libsqlite3.0.tbd */; };
+		D741706C2347450D005AF640 /* SaveDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D741706B2347450D005AF640 /* SaveDataViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,11 @@
 		D741704D23473A27005AF640 /* dbProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = dbProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D741705123473A27005AF640 /* dbProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dbProjectUITests.swift; sourceTree = "<group>"; };
 		D741705323473A27005AF640 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D741706023473A5C005AF640 /* dbUserInfo.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = dbUserInfo.db; sourceTree = "<group>"; };
+		D741706323473B7A005AF640 /* dbManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dbManager.swift; sourceTree = "<group>"; };
+		D741706623473D59005AF640 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		D741706823473E42005AF640 /* dbProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "dbProject-Bridging-Header.h"; sourceTree = "<group>"; };
+		D741706B2347450D005AF640 /* SaveDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveDataViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D741706723473D59005AF640 /* libsqlite3.0.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,11 +89,11 @@
 		D741702223473A26005AF640 = {
 			isa = PBXGroup;
 			children = (
-				D741705F23473A2C005AF640 /* dbFile */,
 				D741702D23473A26005AF640 /* dbProject */,
 				D741704523473A27005AF640 /* dbProjectTests */,
 				D741705023473A27005AF640 /* dbProjectUITests */,
 				D741702C23473A26005AF640 /* Products */,
+				D741706523473D59005AF640 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +110,8 @@
 		D741702D23473A26005AF640 /* dbProject */ = {
 			isa = PBXGroup;
 			children = (
+				D741706223473B60005AF640 /* dbHelper */,
+				D741705F23473A2C005AF640 /* dbFile */,
 				D741702E23473A26005AF640 /* AppDelegate.swift */,
 				D741703023473A26005AF640 /* ViewController.swift */,
 				D741703223473A27005AF640 /* Main.storyboard */,
@@ -107,6 +119,7 @@
 				D741703A23473A27005AF640 /* LaunchScreen.storyboard */,
 				D741703D23473A27005AF640 /* Info.plist */,
 				D741703523473A27005AF640 /* dbProject.xcdatamodeld */,
+				D741706B2347450D005AF640 /* SaveDataViewController.swift */,
 			);
 			path = dbProject;
 			sourceTree = "<group>";
@@ -132,8 +145,26 @@
 		D741705F23473A2C005AF640 /* dbFile */ = {
 			isa = PBXGroup;
 			children = (
+				D741706023473A5C005AF640 /* dbUserInfo.db */,
 			);
 			path = dbFile;
+			sourceTree = "<group>";
+		};
+		D741706223473B60005AF640 /* dbHelper */ = {
+			isa = PBXGroup;
+			children = (
+				D741706323473B7A005AF640 /* dbManager.swift */,
+				D741706823473E42005AF640 /* dbProject-Bridging-Header.h */,
+			);
+			path = dbHelper;
+			sourceTree = "<group>";
+		};
+		D741706523473D59005AF640 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D741706623473D59005AF640 /* libsqlite3.0.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +235,7 @@
 				TargetAttributes = {
 					D741702A23473A26005AF640 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					D741704123473A27005AF640 = {
@@ -245,6 +277,7 @@
 			files = (
 				D741703C23473A27005AF640 /* LaunchScreen.storyboard in Resources */,
 				D741703923473A27005AF640 /* Assets.xcassets in Resources */,
+				D741706123473A5C005AF640 /* dbUserInfo.db in Resources */,
 				D741703423473A27005AF640 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,6 +306,8 @@
 				D741703123473A26005AF640 /* ViewController.swift in Sources */,
 				D741703723473A27005AF640 /* dbProject.xcdatamodeld in Sources */,
 				D741702F23473A26005AF640 /* AppDelegate.swift in Sources */,
+				D741706C2347450D005AF640 /* SaveDataViewController.swift in Sources */,
+				D741706423473B7A005AF640 /* dbManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,11 +473,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = dbProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = bg.dbProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "dbProject/dbHelper/dbProject-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -452,11 +490,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = dbProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = bg.dbProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "dbProject/dbHelper/dbProject-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
